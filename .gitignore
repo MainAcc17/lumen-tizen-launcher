@@ -1,0 +1,11 @@
+# signing keys and certificates — never publish these
+keys/
+*.pem
+*.p12
+*.pwd
+*.pri
+author-signature.xml
+signature*.xml
+# build output
+*.wgt
+build/

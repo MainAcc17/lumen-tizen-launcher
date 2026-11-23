@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumen</title>
+<link rel="stylesheet" href="glass.css">
+</head>
+<body class="anim-full">
+<div id="stage">
+  <div id="bg" class="layer"></div>
+  <div id="bg2" class="layer"></div>
+  <div id="bgShade" class="layer"></div>
+  <div id="nightShade" class="layer"></div>
+
+  <!-- hero: clock, date, greeting -->
+  <div id="hero">
+    <div id="time">--:--</div>
+    <div id="date"></div>
+    <div id="greet"></div>
+  </div>
+  <div id="brand">LUMEN</div>
+
+  <!-- top-right: quick buttons + controls -->
+  <div id="topBtns">
+    <div class="pill icon" id="btnSleep"><svg class="ico" viewBox="0 0 40 40"><path d="M27 6a14 14 0 1 0 7 22A12 12 0 0 1 27 6z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M24 14h6l-6 7h6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cnt" id="sleepLeft"></span><span class="lab" data-t="sleep"></span></div>
+    <div class="pill icon" id="btnSound"><svg class="ico" viewBox="0 0 40 40"><path d="M6 22c3-6 5-6 8 0s5 6 8 0 5-6 8 0 4 5 5 3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M6 14c3-5 5-5 8 0s5 5 8 0 5-5 8 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/></svg><span class="lab" data-t="soundscape"></span></div>
+    <div class="pill icon" id="btnScreen"><svg class="ico" viewBox="0 0 40 40"><rect x="5" y="8" width="30" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M14 34h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M13 13l14 10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="lab" data-t="screenOff"></span></div>
+    <div class="pill" id="btnEdit"><svg class="ico" viewBox="0 0 40 40"><path d="M8 30l3-9 14-14a3 3 0 0 1 4 0l2 2a3 3 0 0 1 0 4L17 27l-9 3z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg><span data-t="arrange"></span></div>
+    <div class="pill" id="btnSettings"><svg class="ico" viewBox="0 0 40 40"><circle cx="20" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M20 4v6M20 30v6M4 20h6M30 20h6M8.7 8.7l4.2 4.2M27.1 27.1l4.2 4.2M8.7 31.3l4.2-4.2M27.1 12.9l4.2-4.2" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span data-t="settings"></span></div>
+  </div>
+
+  <!-- weather card -->
+  <div id="weather" class="glass">
+    <div class="g-frost"></div><div class="g-tint"></div><div class="g-sheen"></div><div class="g-edge"></div>
+    <div class="g-body">
+      <div id="wIcon"></div>
+      <div id="wTemp">--°</div>
+      <div id="wDesc"></div>
+      <div id="wPlace"></div>
+    </div>
+  </div>
+
+  <!-- main glass panel: favourites + sources -->
+  <div id="dock" class="glass">
+    <div class="g-frost"></div><div class="g-tint"></div><div class="g-sheen"></div><div class="g-edge"></div>
+    <div class="g-body">
+      <div class="zone-title" id="dockTitle" data-t="favourites"></div>
+      <div class="zone-title" id="srcTitle" data-t="sources"></div>
+      <div id="dockHint"></div>
+      <div id="dockClip"><div id="dockTrack"></div></div>
+    </div>
+  </div>
+
+  <!-- continue watching + all apps -->
+  <div class="zone-title" id="recentTitle" data-t="continue"></div>
+  <div id="recentClip"><div id="recentTrack"></div></div>
+
+  <!-- key hints -->
+  <div id="hints" class="glass">
+    <div class="g-frost"></div><div class="g-tint"></div><div class="g-edge"></div>
+    <div class="g-body" id="hintText"></div>
+  </div>
+
+  <!-- all apps drawer -->
+  <div id="drawerScrim" class="layer"></div>
+  <div id="drawer" class="glass solid">
+    <div class="g-frost"></div><div class="g-tint"></div><div class="g-sheen"></div><div class="g-edge"></div>
+    <div class="g-body">
+      <h2 data-t="allApps"></h2>
+      <div class="sub" id="drawerSub"></div>
+      <div id="drawerClip"><div id="rowsTrack"></div></div>
+    </div>
+  </div>
+
+  <!-- settings -->
+  <div id="scrim" class="layer"></div>
+  <div id="settings" class="glass solid">
+    <div class="g-frost"></div><div class="g-tint"></div><div class="g-sheen"></div><div class="g-edge"></div>
+    <div class="g-body">
+      <h2 data-t="settings"></h2>
+      <div class="sub" id="setSub"></div>
+      <div id="setClip"><div id="setList"></div></div>
+    </div>
+  </div>
+
+  <!-- small options menu (hold OK / GREEN, quick buttons, rename) -->
+  <div id="menuScrim" class="layer"></div>
+  <div id="menu" class="glass solid">
+    <div class="g-frost"></div><div class="g-tint"></div><div class="g-sheen"></div><div class="g-edge"></div>
+    <div class="g-body">
+      <div id="menuHead"></div>
+      <div id="menuTitle"></div>
+      <div id="menuList"></div>
+    </div>
+  </div>
+
+  <!-- launch overlay -->
+  <div id="launch" class="layer">
+    <div id="launchFrost" class="layer"></div><div id="launchTint" class="layer"></div>
+    <div id="launchCard"></div>
+    <div id="launchMsg"></div>
+    <div id="launchNote"></div>
+  </div>
+
+  <!-- full-screen input (HDMI) view -->
+  <div id="watch" class="layer"><div id="watchHint" class="glass solid"><div class="g-frost"></div><div class="g-tint"></div><div class="g-edge"></div><div class="g-body" id="watchText"></div></div></div>
+
+  <!-- screensaver -->
+  <div id="saver" class="layer">
+    <div id="saverImg" class="layer"></div>
+    <div id="saverShade" class="layer"></div>
+    <div id="saverBox">
+      <div id="sTime"></div>
+      <div id="sDate"></div>
+      <div id="sWeather"></div>
+    </div>
+  </div>
+
+  <!-- screen off -->
+  <div id="blackout" class="layer"><div id="blackText"></div></div>
+
+  <div id="toast" class="glass solid">
+    <div class="g-frost"></div><div class="g-tint"></div><div class="g-edge"></div>
+    <div class="g-body" id="toastText"></div>
+  </div>
+</div>
+
+<!-- browser preview only: on-screen remote -->
+<div id="remote">
+  <button data-k="left">◀</button><button data-k="up">▲</button><button data-k="down">▼</button><button data-k="right">▶</button>
+  <button class="wide" data-k="ok">OK</button><button class="wider" data-k="options">Hold OK</button><button class="wide" data-k="back">Back</button>
+  <button class="c" data-k="red" style="background:#e5484d"></button><button class="c" data-k="green" style="background:#30a46c"></button>
+  <button class="c" data-k="yellow" style="background:#f5c518"></button><button class="c" data-k="blue" style="background:#3e7bfa"></button>
+  <span class="tip">Keyboard: arrows · Enter (hold = options) · Esc · R G Y B</span>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
